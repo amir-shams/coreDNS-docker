@@ -1,0 +1,36 @@
+domain_1.com {
+file /etc/coredns/domain_1.com.conf
+transfer {
+ to *
+}
+
+errors stdout
+log stdout
+}
+
+domain_2.com {
+file /etc/coredns/domain_2.com.conf
+transfer {
+ to *
+}
+
+errors stdout
+log stdout
+}
+
+
+srv.local {
+file /etc/coredns/srv.local.conf
+transfer {
+ to *
+}
+
+errors stdout
+log stdout
+}
+
+. {
+    forward . 8.8.8.8 4.2.2.3
+    log
+}
+
